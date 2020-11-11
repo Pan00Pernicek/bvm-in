@@ -1,7 +1,8 @@
 #!/usr/bin/env bash
 $name=$1
 $iso=$2
-#qemu-img create bvminstall.img 16G
+qemu-img create bvminstall.img 16G
+qemu-system-x86_64 -hda bvminstall.img -boot d -cdrom $iso -m 1024 -enable-kvm
 #execute iso in qemu and wait for user install
 #cp -a $name /bedrock/strata/$name
 #do post adding tasks
